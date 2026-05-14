@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voice Recorder Bot</title>
+<meta name="description" content="A Discord voice-recording bot with live transcription, filter-word alerts, per-server config, and shareable links.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="inner">
+    <a class="logo" href="index.html">🎙 Voice Recorder Bot</a>
+    <nav>
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <h1>🎙 Voice Recorder Bot</h1>
+    <p class="tagline">
+      A Discord bot that records voice channels, transcribes them in real time,
+      flags configured words, and posts shareable links — built and operated by
+      <code>panther13055</code>.
+    </p>
+  </section>
+
+  <div class="card-grid">
+    <a class="card" href="terms.html">
+      <h2>Terms of Service</h2>
+      <p>What you agree to by using the bot — including recording-consent obligations and acceptable use.</p>
+    </a>
+    <a class="card" href="privacy.html">
+      <h2>Privacy Policy</h2>
+      <p>What data the bot collects, where it lives, how long it's kept, and how to have it deleted.</p>
+    </a>
+  </div>
+
+  <div class="feature-list">
+    <h3>What the bot does</h3>
+    <ul>
+      <li>Joins voice channels and records per-user audio (WAV) and a live transcript</li>
+      <li>Transcribes speech locally with Whisper (offline)</li>
+      <li>Pings a configured role when a filter word is spoken, with a 10-second audio clip</li>
+      <li>Uploads recordings and transcripts to <code>catbox.moe</code> / <code>litterbox.catbox.moe</code> for shareable links</li>
+      <li>Per-server prefix, filter list, VC auto-roles, recording blacklist, backup channel</li>
+      <li>Server administrators control configuration; the operator controls global access</li>
+    </ul>
+  </div>
+</main>
+<footer>
+  Operator: Discord <code>panther13055</code> (ID <code>990361883775225926</code>) ·
+  <a href="terms.html">Terms</a> ·
+  <a href="privacy.html">Privacy</a>
+</footer>
+</body>
+</html>

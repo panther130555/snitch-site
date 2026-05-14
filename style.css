@@ -1,0 +1,303 @@
+:root {
+    --bg: #0e1117;
+    --surface: #161b22;
+    --surface-2: #21262d;
+    --text: #e6edf3;
+    --text-dim: #9aa4af;
+    --accent: #5865f2;
+    --accent-hover: #4752c4;
+    --border: #30363d;
+    --warn: #f0b232;
+    --danger: #f85149;
+    --good: #3fb950;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "SF Pro Text",
+        "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(8px);
+}
+
+header .inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+header .logo {
+    font-weight: 700;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+header nav {
+    margin-left: auto;
+    display: flex;
+    gap: 20px;
+}
+
+header nav a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.15s;
+}
+
+header nav a:hover,
+header nav a.active {
+    color: var(--text);
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 48px 24px 96px;
+}
+
+main h1 {
+    font-size: 2.2rem;
+    margin: 0 0 8px;
+    letter-spacing: -0.02em;
+}
+
+main h2 {
+    font-size: 1.5rem;
+    margin: 36px 0 12px;
+    letter-spacing: -0.01em;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+}
+
+main h2:first-of-type {
+    border-top: none;
+    padding-top: 0;
+}
+
+main h3 {
+    font-size: 1.15rem;
+    margin: 24px 0 8px;
+}
+
+main p,
+main li {
+    color: var(--text);
+}
+
+main strong {
+    color: #ffffff;
+}
+
+main em {
+    color: var(--text-dim);
+}
+
+main a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+main a:hover {
+    text-decoration: underline;
+}
+
+code,
+kbd {
+    font-family: "SF Mono", "Menlo", Consolas, monospace;
+    background: var(--surface-2);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: #e9b160;
+}
+
+pre {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 14px 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+    line-height: 1.45;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: var(--text);
+}
+
+ul,
+ol {
+    padding-left: 22px;
+}
+
+li {
+    margin-bottom: 4px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 16px 0;
+    font-size: 0.95em;
+}
+
+th,
+td {
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background: var(--surface);
+    font-weight: 600;
+}
+
+td code {
+    word-break: break-word;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--border);
+    margin: 32px 0;
+}
+
+.last-updated {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    margin-bottom: 28px;
+}
+
+.callout {
+    background: var(--surface);
+    border-left: 4px solid var(--warn);
+    padding: 16px 20px;
+    border-radius: 6px;
+    margin: 24px 0;
+}
+
+.callout.warning {
+    border-left-color: var(--danger);
+}
+
+.callout.good {
+    border-left-color: var(--good);
+}
+
+footer {
+    border-top: 1px solid var(--border);
+    padding: 24px;
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+}
+
+footer a {
+    color: var(--text-dim);
+    margin: 0 8px;
+}
+
+/* Landing-page specific */
+.hero {
+    padding: 72px 0 56px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 12px;
+}
+
+.hero .tagline {
+    color: var(--text-dim);
+    font-size: 1.15rem;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.card-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 24px;
+}
+
+@media (max-width: 700px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px;
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.15s, transform 0.15s;
+    display: block;
+}
+
+.card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.card h2 {
+    margin: 0 0 8px;
+    font-size: 1.3rem;
+    border: 0;
+    padding: 0;
+}
+
+.card p {
+    color: var(--text-dim);
+    margin: 0;
+}
+
+.feature-list {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin-top: 32px;
+}
+
+.feature-list h3 {
+    margin-top: 0;
+}
