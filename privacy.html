@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacy Policy — Voice Recorder Bot</title>
-<meta name="description" content="Privacy Policy for the Voice Recorder Bot.">
+<title>Privacy Policy — Snitch</title>
+<meta name="description" content="Privacy Policy for Snitch.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
   <div class="inner">
-    <a class="logo" href="index.html">🎙 Voice Recorder Bot</a>
+    <a class="logo" href="index.html">🎙 Snitch</a>
     <nav>
       <a href="terms.html">Terms</a>
       <a href="privacy.html" class="active">Privacy</a>
@@ -18,211 +18,82 @@
   </div>
 </header>
 <main>
-<h1 id="privacy-policy-voice-recorder-bot">Privacy Policy — Voice Recorder Bot</h1>
-<p><strong>Last updated:</strong> 14 May 2026
-<strong>Operator:</strong> Discord user <code>panther13055</code> (ID <code>990361883775225926</code>)
-<strong>Bot:</strong> Voice Recorder 2 (<code>1504373717046788146</code>)</p>
-<p>This document explains what data the bot collects, where it's stored, how long it's kept, who it's shared with, and how you can have it deleted.</p>
+<h1 id="privacy-policy-snitch">Privacy Policy for Snitch</h1>
+<p><strong>Effective Date:</strong> May 19, 2026</p>
 <hr>
-<h2 id="1-plain-english-summary">1. Plain-English summary</h2>
+<h2 id="1-introduction">1. Introduction</h2>
+<p>This policy explains what information the Snitch Discord bot ("Snitch", "the bot", "we", "us") collects, why it is collected, how long it is kept, and the choices available to you. By using the bot, or by remaining in a voice or text channel where the bot is active, you acknowledge this policy. Questions may be directed to the contact in Section 11.</p>
+<h2 id="2-information-we-collect">2. Information We Collect</h2>
+<p>The bot processes the following categories of data:</p>
 <ul>
-<li>When the bot records a voice channel, <strong>your spoken audio is captured, transcribed, and saved</strong>.</li>
-<li>That data is stored on the bot operator's personal computer (in <code>recordings/&lt;session&gt;/</code>) <strong>indefinitely</strong> unless deleted.</li>
-<li>Recordings and transcripts are uploaded to <strong>catbox.moe / litterbox.catbox.moe</strong> to create shareable links. Anyone with a link can access the file until it expires (72 hours for audio; permanent for the polished transcript on catbox.moe unless the operator deletes it).</li>
-<li>Per-server configuration data (your user ID is stored in <code>vc_role_rules</code>, etc.) is kept in plain-text JSON files on the operator's machine.</li>
-<li>You can request deletion at any time (see §8).</li>
+<li><strong>User identifiers</strong> — Discord user IDs and display names of speakers present during a recording.</li>
+<li><strong>Guild and channel metadata</strong> — server IDs, channel IDs, role IDs, and message IDs needed to operate commands.</li>
+<li><strong>Command arguments</strong> — text supplied when a command is run.</li>
+<li><strong>Voice data</strong> — when an authorised member starts a recording, the bot captures the audio of every speaker in the channel and generates a speech-to-text transcript of that audio.</li>
+<li><strong>Server configuration</strong> — per-server settings such as command prefix, filter words, role rules, and channel blacklists.</li>
 </ul>
-<p>If recording audio or transcripts of your voice is a problem, <strong>leave the voice channel before the bot starts recording</strong>, or ask a server administrator to add the channel to the bot's recording blacklist (<code>,vcblacklist add #channel</code>).</p>
-<h2 id="2-data-the-bot-collects">2. Data the bot collects</h2>
-<h3 id="21-voice-data-captured-only-during-an-active-recording-session">2.1 Voice data (captured only during an active recording session)</h3>
-<table>
-<thead>
-<tr>
-<th>Data</th>
-<th>Where it comes from</th>
-<th>Format</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Raw audio of every speaker</td>
-<td>Discord voice gateway</td>
-<td>48 kHz stereo 16-bit PCM → wrapped as <code>.wav</code></td>
-</tr>
-<tr>
-<td>Speech-to-text transcript of every audible utterance</td>
-<td>Local Whisper inference on the audio above</td>
-<td>Plain text <code>.txt</code></td>
-</tr>
-<tr>
-<td>Filename labels containing your <strong>Discord user ID</strong> and <strong>display name</strong> at recording time</td>
-<td>Discord API</td>
-<td>e.g. <code>panther-990361883775225926.wav</code></td>
-</tr>
-<tr>
-<td>10-second "evidence clips" when a filter word is detected in your speech</td>
-<td>The transcribing sink</td>
-<td><code>.wav</code> plus a Discord message with the URL</td>
-</tr>
-</tbody>
-</table>
-<h3 id="22-per-server-configuration-no-voice-data">2.2 Per-server configuration (no voice data)</h3>
-<p>Stored permanently in <code>data/guilds.json</code> on the operator's machine. Per server:</p>
+<p>The bot does <strong>not</strong> collect message content beyond what is required to parse its own commands, does <strong>not</strong> collect IP addresses or payment information, and uses <strong>no</strong> advertising or web tracking.</p>
+<h2 id="3-how-we-use-information">3. How We Use Information</h2>
+<p>Collected data is used only to operate the service, specifically to:</p>
 <ul>
-<li>Command prefix, filter words, filter-target role/channel IDs</li>
-<li>VC auto-role rules — <em>includes</em> role IDs (does NOT include user IDs unless an admin adds one explicitly)</li>
-<li>Backup channel ID</li>
-<li>Command-access role ID</li>
-<li>Recording-blacklist VC IDs</li>
+<li>Execute bot commands and return responses.</li>
+<li>Produce and deliver voice recordings and transcripts requested by authorised members.</li>
+<li>Detect configured filter words and alert the roles a server has designated.</li>
+<li>Persist per-server settings between sessions.</li>
+<li>Diagnose errors and maintain the service.</li>
 </ul>
-<h3 id="23-global-configuration">2.3 Global configuration</h3>
-<p>Stored permanently in <code>data/access.json</code> on the operator's machine:</p>
+<h2 id="4-data-storage-and-retention">4. Data Storage and Retention</h2>
 <ul>
-<li>Server IDs that the operator has blacklisted or whitelisted (and a reason string per blacklisted server)</li>
-<li>Access-log channel ID</li>
-<li>Whitelist mode (on/off)</li>
+<li><strong>Recordings and transcripts</strong> are stored on private hardware controlled by the bot operator, on storage protected by full-disk encryption. They are retained until deleted by the operator or upon request (see Section 6).</li>
+<li><strong>Shareable links</strong> are generated by uploading copies of files to third-party file hosts (see Section 5). Temporary audio and live-transcript links expire automatically after <strong>72 hours</strong>. Polished-transcript links may remain available until deleted by the operator.</li>
+<li><strong>Server configuration</strong> is retained for as long as the bot remains in the server and may be cleared after it leaves.</li>
+<li><strong>Diagnostic logs</strong> record connection events and errors and are retained on a best-effort basis.</li>
 </ul>
-<h3 id="24-diagnostic-logs">2.4 Diagnostic logs</h3>
-<p>Stored on the operator's machine in <code>bot.out.log</code> and <code>bot.err.log</code>:</p>
-<ul>
-<li>Bot start/stop timestamps</li>
-<li>Discord connection events (no message content)</li>
-<li>Errors and stack traces (may incidentally include channel or guild IDs)</li>
-<li>Voice connection events (guild ID, channel ID — not audio)</li>
-</ul>
-<h3 id="25-data-we-do-not-collect">2.5 Data we do <strong>not</strong> collect</h3>
-<ul>
-<li>Text messages you send in any channel (the bot does not read message content beyond what's needed to parse its own commands).</li>
-<li>Direct message content unless you DM the bot directly.</li>
-<li>IP addresses (Discord does not share these with bots).</li>
-<li>Payment information (the bot is free).</li>
-<li>Browser cookies or tracking pixels (the bot has no website).</li>
-</ul>
-<h2 id="3-where-data-is-stored">3. Where data is stored</h2>
-<ul>
-<li><strong>Audio + transcripts</strong>: locally on the operator's macOS machine, under <code>recordings/&lt;session_id&gt;/</code>. Not encrypted at rest. Protected by the operator's macOS user account password.</li>
-<li><strong>Configuration JSON</strong>: same machine, under <code>data/</code>. Same protections.</li>
-<li><strong>Shareable links</strong>: copies of the files are uploaded to:</li>
-<li><strong>litterbox.catbox.moe</strong> for audio + live transcripts (auto-deleted after 72 hours; we don't have a way to delete them earlier).</li>
-<li><strong>catbox.moe</strong> for the polished transcript (permanent unless the operator deletes it via their catbox account, which they may not have).</li>
-<li><strong>Discord channel messages</strong>: if a backup channel is configured (<code>,backupchannel</code>), copies of the upload links and the polished transcript file are posted into a Discord channel and stored by Discord.</li>
-</ul>
-<p>The operator does not use any cloud database, analytics service, or third-party logging service beyond what is listed here.</p>
-<h2 id="4-legal-basis-for-processing-gdpr-users">4. Legal basis for processing (GDPR users)</h2>
-<p>For users in the EEA / UK:</p>
-<ul>
-<li><strong>Recording voice</strong> — processed on the basis of <em>consent</em>, which must be obtained by the server's organisers from every participant before recording.</li>
-<li><strong>Configuration data</strong> — processed on the basis of <em>legitimate interest</em> in running the bot, since the data is necessary for the requested service (e.g. you can't have per-server prefixes without storing them).</li>
-<li><strong>Diagnostic logs</strong> — processed on the basis of <em>legitimate interest</em> in operating and maintaining the service.</li>
-</ul>
-<p>You have the rights described in §8 below.</p>
-<h2 id="5-sharing-with-third-parties">5. Sharing with third parties</h2>
-<p>We share data with:</p>
+<p>We cannot retroactively delete links or files that other people have already downloaded or copied.</p>
+<h2 id="5-third-party-services">5. Third-Party Services</h2>
+<p>The bot relies on the following third parties, and your data may pass through them:</p>
 <table>
 <thead>
 <tr>
 <th>Recipient</th>
-<th>What</th>
-<th>Why</th>
+<th>Purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Discord</td>
-<td>Bot commands and responses pass through Discord's infrastructure</td>
-<td>Required to operate a Discord bot</td>
+<td>Hosts the bot and all communications between it and users.</td>
 </tr>
 <tr>
-<td>catbox.moe + litterbox.catbox.moe</td>
-<td>Audio + transcript files</td>
-<td>Generating shareable links</td>
+<td>catbox.moe / litterbox.catbox.moe</td>
+<td>Generates shareable links for recordings and transcripts.</td>
 </tr>
 <tr>
 <td>Hugging Face</td>
-<td>The Whisper model files are downloaded from them</td>
-<td>First-run only; no user data is sent to them during transcription</td>
-</tr>
-<tr>
-<td>Anyone with the link</td>
-<td>The recording URLs are by design shareable</td>
-<td>The shareable-link feature is the whole point</td>
+<td>One-time download of the speech-recognition model used locally; no user data is sent during transcription.</td>
 </tr>
 </tbody>
 </table>
-<p>We do <strong>not</strong> sell or rent personal data to advertisers. There is no advertising integration.</p>
-<h2 id="6-retention">6. Retention</h2>
-<table>
-<thead>
-<tr>
-<th>Data</th>
-<th>Retention</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Audio <code>.wav</code> files (local)</td>
-<td>Until the operator deletes them, or the disk fails</td>
-</tr>
-<tr>
-<td>Transcripts (local)</td>
-<td>Same</td>
-</tr>
-<tr>
-<td>Litterbox links</td>
-<td><strong>72 hours</strong> (auto-deleted by litterbox)</td>
-</tr>
-<tr>
-<td>Permanent catbox links</td>
-<td>Indefinite, until the operator deletes them</td>
-</tr>
-<tr>
-<td>Backup-channel Discord messages</td>
-<td>Until you / a server admin deletes the message, or the channel/server is deleted</td>
-</tr>
-<tr>
-<td>Per-server configuration</td>
-<td>Until the bot leaves the server <strong>and</strong> the operator manually clears the entry from <code>data/guilds.json</code></td>
-</tr>
-<tr>
-<td>Diagnostic logs</td>
-<td>The operator does not actively rotate these; they grow over time and are usually purged only when disk space requires it</td>
-</tr>
-</tbody>
-</table>
-<p>Asking the operator to delete data (see §8) results in <em>local</em> deletion within a few days. We cannot retroactively delete already-shared links from anyone who has copied them.</p>
-<h2 id="7-security">7. Security</h2>
-<p>We take <strong>reasonable but not extensive</strong> security precautions for a free, personally-operated bot:</p>
+<p>We do <strong>not</strong> sell, trade, or rent personal data. We may disclose information where required by law or valid legal process.</p>
+<h2 id="6-your-rights">6. Your Rights</h2>
+<p>You may contact the bot operator (see Section 11) to request:</p>
 <ul>
-<li>The operator's machine has full-disk encryption (FileVault) enabled.</li>
-<li>Bot files are accessible only to the operator's macOS user.</li>
-<li>The Discord bot token is stored in a <code>.env</code> file with restrictive permissions, not committed to any repository.</li>
-<li>Data is not encrypted at rest beyond the operating-system-level encryption above.</li>
+<li><strong>Access</strong> — a summary of the data the bot holds about you.</li>
+<li><strong>Deletion</strong> — removal of your recordings, transcripts, and any configuration entries keyed to your user ID.</li>
+<li><strong>Correction</strong> — removal of an inaccurate transcript line.</li>
+<li><strong>Withdrawal of consent</strong> — for any future processing of your data.</li>
 </ul>
-<p><strong>We do not warrant that the data is secure against all threats.</strong> A compromise of the operator's machine, of catbox.moe, or of your Discord account could expose data. If you have higher security requirements, <strong>do not speak in voice channels where this bot is recording</strong>.</p>
-<h2 id="8-your-rights">8. Your rights</h2>
-<p>Regardless of jurisdiction, you may at any time DM the operator (<code>990361883775225926</code> on Discord) and request:</p>
-<ul>
-<li><strong>Access</strong> — a list of what data the bot has about you, including the contents of any recordings.</li>
-<li><strong>Deletion</strong> — removal of all your audio, transcripts, and any user-ID-keyed configuration. We will:</li>
-<li>Delete the relevant <code>.wav</code>, <code>.txt</code>, and <code>.pcm</code> files from local storage.</li>
-<li>Delete the permanent transcript link on catbox.moe (if any). Litterbox links will auto-expire on their own schedule and cannot be force-deleted.</li>
-<li>Ask any server admin who has mirrored the recording to a backup channel to delete the mirrored message; if they refuse, that copy is outside our control.</li>
-<li>Remove your user ID from any per-server configuration that contains it.</li>
-<li><strong>Correction</strong> — correction of an incorrect transcript line (we'll delete the line; we won't re-transcribe a different result).</li>
-<li><strong>Withdrawal of consent</strong> — withdrawal of consent for any future processing of your data.</li>
-<li><strong>Lodging a complaint</strong> — if you're in the EEA / UK, with your national data-protection authority.</li>
-</ul>
-<p>If you cannot reach the operator on Discord, recordings live at:
-<code>/Users/Rajit/Desktop/FIles/Discord Bot/Voice Recording Bot Claude/recordings/</code>
-…on their personal Mac, which only they can access.</p>
-<h2 id="9-childrens-data">9. Children's data</h2>
-<p>The bot is not intended for use by anyone under 13 (or the higher minimum age set by Discord in your region). If we become aware that data has been collected from a child below the applicable age, we will delete it.</p>
-<h2 id="10-international-data-transfers">10. International data transfers</h2>
-<p>The operator is in India. Catbox is hosted in the European Union. Discord is primarily US-based. By using the bot you accept that your data may be transferred to and processed in these jurisdictions.</p>
-<h2 id="11-changes">11. Changes</h2>
-<p>This policy may be updated. Material changes will be reflected in the "Last updated" date at the top. We will not change the policy retroactively to permit more invasive processing of data already collected without notifying you.</p>
-<h2 id="12-contact">12. Contact</h2>
-<p>DM the operator on Discord — user ID <code>990361883775225926</code>. This is the only contact channel for the bot.</p>
+<p>Verified requests are processed within a reasonable period. Temporary third-party links cannot be force-deleted and will expire on their own schedule. If a server has mirrored a recording elsewhere, that copy is controlled by that server's administrators.</p>
+<h2 id="7-recording-consent">7. Recording Consent</h2>
+<p>Recording voice communications is privacy-sensitive and is regulated differently across jurisdictions. The bot has <strong>no technical means of excluding an individual speaker</strong> from a recording. If you do not consent to being recorded, leave the voice channel before recording begins, or ask a server administrator to add the channel to the recording blacklist.</p>
+<h2 id="8-security">8. Security</h2>
+<p>We apply reasonable security measures appropriate to a free, independently operated bot, including full-disk encryption of stored files and restricted access to credentials. No system is perfectly secure, and we cannot guarantee data against all threats. If you have heightened privacy needs, do not speak in voice channels where the bot is recording.</p>
+<h2 id="9-childrens-privacy">9. Children's Privacy</h2>
+<p>The bot is not intended for anyone under 13, or the higher minimum age required by Discord in your region. If we become aware that data has been collected from a child below the applicable age, we will delete it.</p>
+<h2 id="10-changes-to-this-policy">10. Changes to This Policy</h2>
+<p>This policy may be updated from time to time. Material changes will be reflected in the Effective Date above. We will not retroactively apply more invasive processing to data already collected without notice.</p>
+<h2 id="11-contact">11. Contact</h2>
+<p>Privacy questions, access requests, and deletion requests should be sent by Discord direct message to the bot operator (user ID <code>990361883775225926</code>). This is a free service with no service-level agreement; reasonable responses can be expected within a few days.</p>
 </main>
 <footer>
   Operator: Discord <code>panther13055</code> (ID <code>990361883775225926</code>) ·

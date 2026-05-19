@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Terms of Service — Voice Recorder Bot</title>
-<meta name="description" content="Terms of Service for the Voice Recorder Bot.">
+<title>Terms of Service — Snitch</title>
+<meta name="description" content="Terms of Service for Snitch.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
   <div class="inner">
-    <a class="logo" href="index.html">🎙 Voice Recorder Bot</a>
+    <a class="logo" href="index.html">🎙 Snitch</a>
     <nav>
       <a href="terms.html" class="active">Terms</a>
       <a href="privacy.html">Privacy</a>
@@ -18,116 +18,64 @@
   </div>
 </header>
 <main>
-<h1 id="terms-of-service-voice-recorder-bot">Terms of Service — Voice Recorder Bot</h1>
-<p><strong>Last updated:</strong> 14 May 2026
-<strong>Operator / Developer ("we", "us"):</strong> Discord user <code>panther13055</code> (ID <code>990361883775225926</code>)
-<strong>Bot:</strong> Voice Recorder 2 (<code>1504373717046788146</code>)</p>
-<p>By inviting, using, or remaining in a server where this bot is present, you ("you", "the user") agree to these Terms.</p>
+<h1 id="terms-of-service-snitch">Terms of Service for Snitch</h1>
+<p><strong>Effective Date:</strong> May 19, 2026</p>
 <hr>
-<h2 id="1-what-the-bot-does">1. What the bot does</h2>
-<p>This bot:</p>
+<h2 id="1-acceptance-of-terms">1. Acceptance of Terms</h2>
+<p>By inviting, using, or remaining in a server where the Snitch Discord bot ("Snitch", "the bot", "we", "us") is present, you ("you", "the user") agree to these Terms of Service. If you do not agree, do not use the bot.</p>
+<h2 id="2-description-of-service">2. Description of Service</h2>
+<p>Snitch is a Discord bot that, when an authorised member runs the appropriate command:</p>
 <ol>
-<li>Joins a voice channel when an authorised member runs the appropriate command.</li>
-<li>Records audio from every speaker in that channel.</li>
-<li>Transcribes the audio to text using OpenAI's Whisper (running locally on the operator's machine).</li>
-<li>Saves both the audio and the transcript to disk on the operator's machine.</li>
-<li>Uploads the audio and transcript to third-party file hosts (currently catbox.moe and litterbox.catbox.moe) to generate shareable links.</li>
-<li>Posts those links into the Discord channel where the recording was started, and optionally mirrors them to a configured "backup channel".</li>
-<li>Detects configured "filter words" in real time and pings a configured role with the offending phrase and an audio clip.</li>
-<li>Stores per-server configuration data (prefix, filter words, role rules, blacklists, etc.).</li>
+<li>Joins a voice channel and records the audio of every speaker present.</li>
+<li>Transcribes that audio into text.</li>
+<li>Generates shareable links to the recording and transcript through third-party file hosts.</li>
+<li>Posts those links into Discord, optionally mirroring them to a configured backup channel.</li>
+<li>Detects configured "filter words" and alerts a designated role.</li>
+<li>Stores per-server configuration such as prefixes, filter words, role rules, and blacklists.</li>
 </ol>
-<p>A full feature list is available via the <code>,help</code> command in any server the bot is in.</p>
-<h2 id="2-eligibility-and-authorisation">2. Eligibility and authorisation</h2>
-<ul>
-<li>You must be at least <strong>13 years old</strong> (or the minimum age permitted by Discord's own Terms in your region, whichever is higher).</li>
-<li>The bot is intended for use only in servers that have explicitly authorised it. Server administrators are responsible for inviting the bot, configuring it, and informing their members.</li>
-<li>Use of the bot's voice-recording features in a Discord server <strong>requires that every person in the voice channel be made aware that recording is taking place</strong>. The bot operator is not responsible for ensuring this; the server administrators and the person who runs the <code>,record</code> (a.k.a. <code>,join</code> / <code>,start</code>) command are.</li>
-</ul>
-<h2 id="3-recording-consent-read-this">3. Recording consent — read this</h2>
-<p>Recording private voice communications is a serious legal matter and the rules vary by jurisdiction.</p>
-<ul>
-<li>In many jurisdictions ("one-party consent"), recording is lawful if at least one participant consents (typically the person running the command).</li>
-<li>In other jurisdictions ("all-party consent" — examples include California, Florida, Massachusetts, Washington in the United States; most of the European Union under GDPR; and others), every participant must consent.</li>
-<li><strong>It is your responsibility to know the law in your jurisdiction and to obtain consent accordingly.</strong> The bot operator provides this software as-is and is not liable for unlawful use.</li>
-</ul>
-<p>If you do not consent to being recorded, <strong>leave the voice channel immediately</strong>. The bot does not have any technical way to selectively exclude individual speakers.</p>
-<h2 id="4-acceptable-use">4. Acceptable use</h2>
+<p>A full feature list is available through the <code>help</code> command.</p>
+<h2 id="3-eligibility">3. Eligibility</h2>
+<p>You must be at least <strong>13 years old</strong>, or the minimum age required by Discord in your region, whichever is higher. The bot is intended for use only in servers that have authorised it.</p>
+<h2 id="4-recording-consent">4. Recording Consent</h2>
+<p>Recording voice communications is regulated differently across jurisdictions. Some require consent from only one participant; others require consent from every participant. <strong>It is your responsibility to know the law that applies to you and to obtain any consent it requires.</strong> The bot is provided as-is, and the operator is not liable for unlawful use. If you do not consent to being recorded, leave the voice channel before recording begins.</p>
+<h2 id="5-acceptable-use">5. Acceptable Use</h2>
 <p>You agree <strong>not</strong> to use the bot to:</p>
 <ol>
 <li>Record any voice channel without the legally required consent of its participants.</li>
-<li>Capture, transcribe, or store communications protected by attorney–client, doctor–patient, therapist–client, journalistic source, or any analogous professional privilege.</li>
-<li>Capture minors' voices without verifiable guardian consent.</li>
+<li>Capture communications protected by attorney–client, doctor–patient, journalistic, or any analogous professional privilege.</li>
+<li>Capture the voices of minors without verifiable guardian consent.</li>
 <li>Stalk, harass, intimidate, or surveil any person.</li>
-<li>Bypass the recording blacklist or any access-control mechanism (<code>vcblacklist</code>, <code>cmdrole</code>, etc.) configured by a server administrator.</li>
-<li>Capture audio for the purposes of training machine-learning models, generating voice clones, or producing deepfakes of any person.</li>
-<li>Resell, redistribute, or commercialise the recordings or transcripts produced by the bot without the explicit consent of every speaker.</li>
-<li>Probe, reverse-engineer, exploit, or attempt to access the bot's host machine, source storage, or configuration.</li>
-<li>Use the bot in violation of Discord's <a href="https://discord.com/terms">Terms of Service</a>, <a href="https://discord.com/guidelines">Community Guidelines</a>, or <a href="https://discord.com/developers/docs/policies-and-agreements/developer-terms-of-service">Developer Terms</a>.</li>
-<li>Use the bot for any unlawful purpose.</li>
+<li>Bypass any access-control or blacklist mechanism configured by a server administrator.</li>
+<li>Capture audio to train machine-learning models or to generate voice clones or deepfakes.</li>
+<li>Resell, redistribute, or commercialise recordings or transcripts without the consent of every speaker.</li>
+<li>Probe, reverse-engineer, exploit, or attempt to gain unauthorised access to the bot or its hosting environment.</li>
+<li>Exploit bugs, scrape data, or reproduce or resell the bot's features.</li>
+<li>Use the bot in violation of <a href="https://discord.com/terms">Discord's Terms of Service</a>, <a href="https://discord.com/guidelines">Community Guidelines</a>, or <a href="https://discord.com/developers/docs/policies-and-agreements/developer-terms-of-service">Developer Terms</a>, or for any unlawful purpose.</li>
 </ol>
-<p>Violation of this section is grounds for immediate revocation of access at the operator's sole discretion (including blacklisting your server via <code>,blacklistserver</code>).</p>
-<h2 id="5-server-administrators">5. Server administrators</h2>
-<p>If you invite this bot to your server, you represent that:</p>
+<p>Violation is grounds for immediate revocation of access at the operator's sole discretion, including blacklisting the offending server.</p>
+<h2 id="6-server-administrator-responsibilities">6. Server Administrator Responsibilities</h2>
+<p>If you invite the bot to a server, you represent that:</p>
 <ul>
 <li>You have authority to install bots in that server.</li>
-<li>You will inform members of the server (typically via a <code>#rules</code> channel or pinned notice) that the bot is present and may record voice channels.</li>
-<li>You will keep the bot's <code>recording blacklist</code> (<code>,vcblacklist</code>) up to date so that channels intended for private conversation (e.g. mental-health support, HR, executive sessions) are explicitly excluded.</li>
-<li>You are responsible for the actions of members of your server who use the bot's commands, including any consequences arising from improper recording.</li>
+<li>You will inform members that the bot is present and may record voice channels.</li>
+<li>You will keep the recording blacklist current so that channels intended for private conversation are excluded.</li>
+<li>You are responsible for the actions of members who use the bot's commands.</li>
 </ul>
-<p>The operator may, without notice, leave or refuse to join any server whose use of the bot appears unlawful or in violation of these Terms.</p>
-<h2 id="6-availability">6. Availability</h2>
-<p>The bot runs on the operator's personal hardware. It is provided <strong>as-is</strong>, with no service-level agreement, uptime guarantee, or warranty of fitness for any purpose. The bot may:</p>
-<ul>
-<li>Be offline at any time without notice (the operator's machine may be off, asleep, or disconnected from the internet).</li>
-<li>Be removed from any server at any time at the operator's sole discretion.</li>
-<li>Have features added, changed, or removed without notice.</li>
-<li>Fail to record, fail to transcribe, or produce incorrect transcripts. The bot must not be relied on as the sole record of any conversation that has legal, contractual, or evidentiary significance.</li>
-</ul>
-<h2 id="7-third-party-services">7. Third-party services</h2>
-<p>The bot relies on the following third parties. By using the bot you also agree to their terms:</p>
-<table>
-<thead>
-<tr>
-<th>Service</th>
-<th>Purpose</th>
-<th>Terms</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Discord</td>
-<td>Hosts the bot and all communications</td>
-<td><a href="https://discord.com/terms">discord.com/terms</a></td>
-</tr>
-<tr>
-<td>catbox.moe (permanent)</td>
-<td>Permanent file hosting of polished transcripts</td>
-<td><a href="https://catbox.moe/">catbox.moe</a></td>
-</tr>
-<tr>
-<td>litterbox.catbox.moe (temporary)</td>
-<td>Up-to-72-hour file hosting of audio + live transcripts</td>
-<td><a href="https://catbox.moe/">catbox.moe</a></td>
-</tr>
-<tr>
-<td>Hugging Face</td>
-<td>Distribution of the Whisper speech-recognition model used locally</td>
-<td><a href="https://huggingface.co/terms-of-service">huggingface.co/terms-of-service</a></td>
-</tr>
-</tbody>
-</table>
-<p>The operator does not control these services and is not responsible for their availability, security, or content moderation.</p>
-<h2 id="8-disclaimer-of-warranties">8. Disclaimer of warranties</h2>
-<p>THE BOT IS PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, OR NON-INFRINGEMENT. THE OPERATOR DOES NOT WARRANT THAT THE BOT WILL BE UNINTERRUPTED, ERROR-FREE, OR FREE OF HARMFUL COMPONENTS.</p>
-<h2 id="9-limitation-of-liability">9. Limitation of liability</h2>
-<p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE OPERATOR SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS, REVENUES, DATA, RECORDINGS, OR GOODWILL, ARISING FROM YOUR USE OF (OR INABILITY TO USE) THE BOT, EVEN IF THE OPERATOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THE OPERATOR'S TOTAL AGGREGATE LIABILITY FOR ANY CLAIM ARISING OUT OF OR RELATING TO THE BOT SHALL NOT EXCEED <strong>USD $0</strong> (THE FEE PAID FOR THE BOT, WHICH IS ZERO).</p>
-<p>You agree to <strong>indemnify and hold harmless</strong> the operator from any claim, demand, or damages (including reasonable legal fees) made by any third party arising out of your use of the bot or your violation of these Terms.</p>
-<h2 id="10-termination">10. Termination</h2>
-<p>The operator may terminate your access to the bot, or the bot's presence in your server, at any time, for any reason or no reason. You may stop using the bot at any time by removing it from your server.</p>
-<h2 id="11-changes">11. Changes</h2>
-<p>These Terms may be updated. Material changes will be noted by updating the "Last updated" date at the top. Continued use of the bot after a change constitutes acceptance of the revised Terms.</p>
-<h2 id="12-contact">12. Contact</h2>
-<p>Issues, takedown requests, or data-deletion requests should be sent via Discord DM to user ID <code>990361883775225926</code>. Reasonable responses can be expected within a few days; this is not a paid service and there is no SLA.</p>
+<h2 id="7-availability">7. Availability</h2>
+<p>The bot is provided <strong>as-is</strong> and <strong>as-available</strong>, with no uptime guarantee or service-level agreement. The bot may be offline, removed from any server, or changed at any time without notice, and may fail to record or produce inaccurate transcripts. It must not be relied on as the sole record of any conversation with legal, contractual, or evidentiary significance.</p>
+<h2 id="8-third-party-services">8. Third-Party Services</h2>
+<p>The bot relies on Discord, the catbox.moe and litterbox.catbox.moe file hosts, and Hugging Face for its speech-recognition model. By using the bot you also accept the terms of those services. The operator does not control them and is not responsible for their availability, security, or content.</p>
+<h2 id="9-disclaimer-of-warranties">9. Disclaimer of Warranties</h2>
+<p>THE BOT IS PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, OR NON-INFRINGEMENT. THE OPERATOR DOES NOT WARRANT THAT THE BOT WILL BE UNINTERRUPTED, ERROR-FREE, OR FREE OF HARMFUL COMPONENTS.</p>
+<h2 id="10-limitation-of-liability">10. Limitation of Liability</h2>
+<p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE OPERATOR SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS, DATA, RECORDINGS, OR GOODWILL, ARISING FROM YOUR USE OF OR INABILITY TO USE THE BOT. THE OPERATOR'S TOTAL AGGREGATE LIABILITY FOR ANY CLAIM SHALL NOT EXCEED USD $0, THE AMOUNT PAID FOR THE BOT.</p>
+<p>You agree to <strong>indemnify and hold harmless</strong> the operator from any claim, demand, or damages (including reasonable legal fees) brought by a third party arising from your use of the bot or your violation of these Terms.</p>
+<h2 id="11-termination">11. Termination</h2>
+<p>The operator may terminate your access to the bot, or the bot's presence in any server, at any time, for any reason or no reason. You may stop using the bot at any time by removing it from your server.</p>
+<h2 id="12-changes-to-these-terms">12. Changes to These Terms</h2>
+<p>These Terms may be updated from time to time. Material changes will be reflected in the Effective Date above. Continued use of the bot after a change constitutes acceptance of the revised Terms.</p>
+<h2 id="13-contact">13. Contact</h2>
+<p>Issues, takedown requests, and data-deletion requests should be sent by Discord direct message to the bot operator (user ID <code>990361883775225926</code>). This is a free service with no service-level agreement; reasonable responses can be expected within a few days.</p>
 </main>
 <footer>
   Operator: Discord <code>panther13055</code> (ID <code>990361883775225926</code>) ·
